@@ -1,0 +1,1635 @@
+<!-- 스타일(common) -->
+<link href="/site/gg/common/css/board_hongbo_font.css" rel="stylesheet" />
+<link href="/site/gg/common/css/board_hongbo3.css" rel="stylesheet" />
+
+<!-- 스타일(custom) -->
+<style>
+    /* 전체 wrap */
+    .board_hongbo3_wrap {
+        container-type: inline-size;
+        container-name: wrap;
+        font-size: 18px;
+    }
+
+    /* ---------------------------------- */
+    /* [키비쥬얼] */
+    .snl-top {
+        position: relative;
+        width: 100%;
+    }
+
+    .snl-top img {
+        vertical-align: top;
+        width: 100%;
+        height: auto;
+    }
+
+    /* ---------------------------------- */
+    /* [상단 info] */
+    .snl-tif {
+        position: relative;
+        width: 100%;
+        background: #c1dfd3;
+        color: #343b36;
+        padding: min(60px, 6.3vw) min(50px, 5.2vw);
+    }
+
+    /* 우측상단 꽃장식 */
+    .snl-tif-flower {
+        position: absolute;
+        right: min(50px, 5.2vw);
+        top: min(60px, 6.3vw);
+        width: min(66px, 6.9vw);
+        height: auto;
+    }
+
+    /* 언제나내곁에 */
+    .snl-tif-alywaysggd {
+        line-height: 1.5;
+        text-align: left;
+        font-weight: 300;
+        font-size: clamp(16px, 2.6vw, 25px);
+    }
+
+    /* 제목 */
+    .snl-tif-title {
+        position: relative;
+        width: 100%;
+        margin-top: 1em;
+        margin-bottom: 1.429em;
+        text-align: center;
+        font-weight: 800;
+        font-size: clamp(30px, 4.4vw, 42px);
+    }
+
+    .snl-tif-title br {
+        display: none;
+    }
+
+    @container wrap (width < 500px) {
+        .snl-tif-title br {
+            display: block;
+        }
+    }
+
+    /* ---------------------------------- */
+    /* [콜센터 관련] */
+    .snl-tif-clctr {
+        --_gap: min(20px, 2.1vw);
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: flex-start;
+        gap: var(--_gap);
+        position: relative;
+        width: 100%;
+    }
+
+    /* 아이템 */
+    .snl-tif-clctr-item {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 10px min(45px, 4.7vw);
+        position: relative;
+        width: calc(50% - (var(--_gap) / 2));
+        padding: min(30px, 3.1vw) min(55px, 5.7vw);
+        background: #e0ebe4;
+        border-radius: 120px;
+        line-height: 1.2;
+    }
+
+    @container wrap (width < 600px) {
+        .snl-tif-clctr-item {
+            width: 100%;
+            border-radius: 12px;
+        }
+    }
+
+
+    /* 아이콘 */
+    .snl-tif-clctr-item-ic {
+        width: clamp(35px, 5.7vw, 55px);
+        height: auto;
+    }
+
+    /* 텍스트 영역 */
+    .snl-tif-clctr-item-text {
+        position: relative;
+    }
+
+    /* 이름 */
+    .snl-tif-clctr-item-text-title {
+        letter-spacing: -0.02em;
+        font-size: clamp(16px, 1.9vw, 18px);
+        font-weight: 600;
+    }
+
+    /* 번호 */
+    .snl-tif-clctr-item-text-tel {
+        text-decoration: none;
+        font-size: clamp(18px, 2.7vw, 26px);
+        font-weight: 600;
+        pointer-events: none;
+    }
+
+    @container wrap (width < 600px) {
+        .snl-tif-clctr-item-text-tel {
+            pointer-events: all;
+        }
+    }
+
+    /* ---------------------------------- */
+    /* [이미지버튼메뉴] */
+    .snl-tif-btnimg {
+        --_gap: clamp(5px, 1.7vw, 16px);
+        --_clr: #fbf1e9;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: flex-start;
+        gap: var(--_gap);
+        position: relative;
+        width: 100%;
+        margin-top: min(60px, 6.3vw);
+    }
+
+    /* 버튼 개별 */
+    .snl-tif-btnimg-link {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: flex-end;
+        position: relative;
+        padding: 25px min(45px, 4.7vw);
+        border-radius: 2px;
+        text-decoration: none;
+        color: var(--_clr);
+        background-repeat: repeat;
+        background-position: left top;
+    }
+
+    .snl-tif-btnimg-link:hover {
+        color: var(--_clr);
+    }
+
+    .snl-tif-btnimg-link:first-child {
+        width: 100%;
+    }
+
+    .snl-tif-btnimg-link:not(:first-child) {
+        width: calc(50% - var(--_gap) / 2);
+    }
+
+    @container wrap (width < 500px) {
+        .snl-tif-btnimg-link:not(:first-child) {
+            width: 100%;
+        }
+    }
+
+    /* 버튼:텍스트 */
+    .snl-tif-btnimg-link-text {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        position: relative;
+        line-height: 1.4;
+        font-size: clamp(16px, 2.5vw, 24px);
+    }
+
+    .snl-tif-btnimg-link-text strong {
+        position: relative;
+        font-size: clamp(20px, 3.3vw, 32px);
+        font-weight: bold;
+    }
+
+    /* 화살표 */
+    .snl-arrowdouble {
+        position: absolute;
+        left: calc(100% + .8em);
+        bottom: 0;
+        width: .8em;
+    }
+
+    .snl-arrowdouble img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* 버튼:이미지 */
+    .snl-tif-btnimg-link-img {
+        max-width: 25%;
+        height: auto;
+    }
+
+    /* ---------------------------------- */
+    /* [탭메뉴] */
+    .snl-tabmenu-wrap {
+        position: relative;
+        width: 100%;
+        font-size: clamp(15px, 2.1vw, 18px);
+        min-height: 2.8em;
+    }
+
+    @container wrap (width < 600px) {
+        .snl-tabmenu-wrap {
+            min-height: 5.6em;
+        }
+    }
+
+    .snl-tabmenu {
+        --_bdr: #a7bbcf;
+        display: flex;
+        flex-flow: row wrap;
+        gap: 1px;
+        position: relative;
+        position: sticky;
+        z-index: 1000;
+        width: 100%;
+        max-width: var(--_wid-max);
+        background: var(--_bdr);
+        border: 1px solid var(--_bdr);
+        border-width: 1px 0;
+    }
+
+    .snl-tabmenu.fixed {
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* 탭메뉴-버튼 */
+    .snl-tabmenu-btn {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        width: calc((100% - 3px) / 4);
+        height: 2.8em;
+        border: none;
+        background: #285889;
+        font-size: inherit;
+        font-weight: 600;
+        color: #fbf1e9;
+        cursor: pointer;
+    }
+
+    .snl-tabmenu-btn.on {
+        background: #4184af;
+        /* font-size:1.05em; */
+    }
+
+    @container wrap (width < 600px) {
+        .snl-tabmenu-btn {
+            width: calc(50% - 1px);
+        }
+    }
+
+    /* ---------------------------------- */
+
+    /* [탭콘텐츠전체영역] */
+    .snl-wrap {
+        --_bg: #e5efe7;
+        --_bdr: #c1dfc9;
+        position: relative;
+        width: 100%;
+        background-color: var(--_bg);
+        background-repeat: repeat;
+        background-size: 100% auto;
+        color: #49403a;
+    }
+
+    /* [탭콘텐츠 영역] */
+    .snl {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        position: relative;
+        width: 100%;
+        padding-bottom: min(5.2vw, 50px);
+        margin: 0 auto;
+        border-bottom: 1px solid #6b9877;
+    }
+
+    /* [탭 제목] */
+    .snl-title {
+        display: none;
+        position: relative;
+        width: 100%;
+        padding: min(5.2vw, 50px);
+        background: #285889;
+        font-size: 28px;
+        font-weight: 700;
+        color: #fbf1e9;
+    }
+
+    .snl:nth-child(even) .snl-title {
+        background: #166e75;
+    }
+
+    /* [row] */
+    .snl-row {
+        position: relative;
+        width: calc(100% - min(10.4vw, 100px));
+        margin-left: auto;
+        margin-right: auto;
+        padding: min(50px, 5.2vw) 0;
+    }
+
+    .snl-row:not(:last-child) {
+        border-bottom: 1px solid #6b9877;
+    }
+
+    /* [row: 제목] */
+    .snl-row-left {
+        position: relative;
+        width: 100%;
+        margin-bottom: 0.8em;
+        font-weight: bold;
+        font-size: clamp(18px, 2.3vw, 22px);
+        color: #1a1a1a;
+    }
+
+    /* [row: 콘텐츠] */
+    .snl-row-right {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        position: relative;
+        width: 100%;
+        padding-left: .25em;
+        line-height: 1.6;
+        font-size: clamp(14px, 1.9vw, 18px);
+        color: #1a1a1a;
+
+    }
+
+    /* [row: 콘텐츠 : 아이템] */
+    .snl-row-right-item {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 0 5px;
+        position: relative;
+        width: 100%;
+    }
+
+    /* [d1] */
+    .snl-row-right-d1 {
+        position: relative;
+        padding-left: .75em;
+    }
+
+    .snl-row-right-d1::before,
+    .snl-uldotasd1-li::before {
+        content: "-";
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    /* [uldot] */
+    .snl-uldot,
+    .snl-uldotasd1 {
+        position: relative;
+        width: 100%;
+    }
+
+    .snl-uldot {
+        padding-left: .8em;
+    }
+
+    .snl-uldot-li,
+    .snl-uldotasd1-li {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 0 5px;
+        position: relative;
+        width: 100%;
+        padding-left: .5em;
+    }
+
+    .snl-uldot-li::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: .7em;
+        left: 0;
+        width: 3px;
+        aspect-ratio: 1/1;
+        background: #000;
+        border: none;
+        border-radius: 50%;
+    }
+
+    /* [uldotAsd1] */
+    .snl-uldotasd1-li {
+        padding-left: .8em;
+    }
+
+    /* [note] */
+    .snl-note {
+        position: relative;
+        padding-left: .5em;
+    }
+
+    .snl-note.snl-note-wid100 {
+        width: 100%;
+    }
+
+    .snl-row-right-item>.snl-note.snl-note-wid100 {
+        padding-left: 1.3em;
+    }
+
+    .snl-note::before {
+        content: "*";
+        position: absolute;
+        left: 0;
+        transform: translateX(-50%);
+    }
+
+    .snl-row-right-item>.snl-note.snl-note-wid100::before {
+        left: 0.8em;
+    }
+
+    /* [동그라미 숫자] */
+    .snl-row-right-title-order {
+        position: relative;
+        margin-right: 1em;
+        font-size: .7em;
+    }
+
+    .snl-row-right-title-order::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 1.3em;
+        aspect-ratio: 1/1;
+        border: 1px solid #343b36;
+        border-radius: 50%;
+    }
+
+    /* [인라인 다운로드] */
+    .snl-row-linkinline {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .snl-row-linkinline:not(.nobg) {
+        display: inline-block;
+        vertical-align: middle;
+        padding: .2em .8em;
+        background: #285889;
+        border: none;
+        border-radius: 2px;
+        text-decoration: none;
+        font-size: clamp(12px, 1.4vw, 13px);
+        color: #fff;
+    }
+
+    .snl-row-linkinline:not(.nobg):hover {
+        color: #fff;
+    }
+
+    /* [tel] */
+    .sn-tel {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    @container wrap (width > 600px) {
+        .sn-tel {
+            pointer-events: none;
+        }
+    }
+</style>
+
+<!-- 본문 -->
+<div class="board_hongbo3_wrap forSticky">
+    <section class="snl-top" area-live="polite"><img title="탑배너" alt="새해복많이받으세요. 희망도 기회도 경기도. 경기도지사 김동연"
+            src="https://www.gg.go.kr/uploads/CONTENTS/site/gg/20250121_snl_topbanner.png"><img title="설날 키비쥬얼"
+            alt="2025 푸른 뱀의 해 새해 복 많이 받으세요! 2025 설 연휴 1.25.(토)~1.30.(목) 경기도 설 종합대책으로 도민 모두가 행복한 설 연휴 보내세요! 경기도는 신속하고 적극적인 민생지원을 통해 도민들의 장바구니 부담은 덜고 따듯한 명절이 될 수 있도록 지원합니다."
+            src="https://www.gg.go.kr/uploads/CONTENTS/site/gg/20250121_snl_keyvisual.png"></section>
+    <section area-live="polite" class="snl-tif"><img title="우측 상단 패턴" alt="전통문양"
+            src="https://www.gg.go.kr/uploads/CONTENTS/site/gg/20250121_snl_flower.png" class="snl-tif-flower">
+        <article class="snl-tif-alywaysggd">언제나 내곁에<br><strong>경기도</strong></article>
+        <h5 class="snl-tif-title">설 연휴 종합상황실 <br>운영안내</h5>
+        <article class="snl-tif-clctr">
+            <div class="snl-tif-clctr-item"><img title="아이콘" alt="24h"
+                    src="https://www.gg.go.kr/uploads/CONTENTS/site/gg/20250121_snl_ic_24h.png"
+                    class="snl-tif-clctr-item-ic">
+                <div class="snl-tif-clctr-item-text">
+                    <p class="snl-tif-clctr-item-text-title">24시 통합민원 콜센터</p><a class="snl-tif-clctr-item-text-tel"
+                        href="tel:031120" style="color: rgb(28, 126, 135);">031-120</a>
+                </div>
+            </div>
+            <div class="snl-tif-clctr-item"><img title="아이콘" alt="헤드폰"
+                    src="https://www.gg.go.kr/uploads/CONTENTS/site/gg/20250121_snl_ic_headphone.png"
+                    class="snl-tif-clctr-item-ic">
+                <div class="snl-tif-clctr-item-text">
+                    <p class="snl-tif-clctr-item-text-title">설 연휴 종합상황실</p><a class="snl-tif-clctr-item-text-tel"
+                        href="tel:03180084084" style="color: rgb(54, 166, 101);">031-8008-4084</a>
+                </div>
+            </div>
+        </article>
+        <article class="snl-tif-btnimg"><a class="snl-tif-btnimg-link hospital"
+                title="연휴기간 문여는 <strong>경기도 응급의료기관</strong>"
+                href="https://www.e-gen.or.kr/egen/holiday_medical.do?emergencyViewYn=Y" target="_blank"
+                style="background-color: rgb(37, 141, 153); background-image: url(&quot;https://www.gg.go.kr/uploads/CONTENTS/site/gg/20250121_snl_pattern_dangwa.png&quot;);">
+                <div class="snl-tif-btnimg-link-text">연휴기간 문여는 <strong>경기도 응급의료기관<span class="snl-arrowdouble"><img
+                                title=">>"
+                                src="https://www.gg.go.kr/uploads/CONTENTS/site/gg/20250121_snl_arrowdouble.png"></span></strong>
+                </div><img title="흰벡터일러스트" alt="병원"
+                    src="https://www.gg.go.kr/uploads/CONTENTS/site/gg/20250121_snl_v_hospital.png"
+                    class="snl-tif-btnimg-link-img">
+            </a><a class="snl-tif-btnimg-link pharmacy" title="연휴기간 문여는 <strong>약국</strong>"
+                href="https://www.e-gen.or.kr/egen/holiday_medical.do" target="_blank"
+                style="background-color: rgb(98, 161, 126); background-image: url(&quot;https://www.gg.go.kr/uploads/CONTENTS/site/gg/20250121_snl_pattern_leaf.png&quot;);">
+                <div class="snl-tif-btnimg-link-text">연휴기간 문여는 <strong>약국<span class="snl-arrowdouble"><img title=">>"
+                                src="https://www.gg.go.kr/uploads/CONTENTS/site/gg/20250121_snl_arrowdouble.png"></span></strong>
+                </div><img title="흰벡터일러스트" alt="약"
+                    src="https://www.gg.go.kr/uploads/CONTENTS/site/gg/20250121_snl_v_medicine.png"
+                    class="snl-tif-btnimg-link-img">
+            </a><a class="snl-tif-btnimg-link emergency" title="중앙응급의료센터 <strong>응급실 찾기</strong>"
+                href="https://www.e-gen.or.kr/egen/search_emergency_room.do" target="_blank"
+                style="background-color: rgb(68, 154, 133); background-image: url(&quot;https://www.gg.go.kr/uploads/CONTENTS/site/gg/20250121_snl_pattern_cloud.png&quot;);">
+                <div class="snl-tif-btnimg-link-text">중앙응급의료센터 <strong>응급실 찾기<span class="snl-arrowdouble"><img
+                                title=">>"
+                                src="https://www.gg.go.kr/uploads/CONTENTS/site/gg/20250121_snl_arrowdouble.png"></span></strong>
+                </div><img title="흰벡터일러스트" alt="구급차"
+                    src="https://www.gg.go.kr/uploads/CONTENTS/site/gg/20250121_snl_v_ambulance.png"
+                    class="snl-tif-btnimg-link-img">
+            </a></article>
+    </section>
+    <section class="snl-tabmenu-wrap">
+        <div class="snl-tabmenu"><button type="button" class="snl-tabmenu-btn on"
+                data-tab-id="tab-consume">민생안정</button><button type="button" class="snl-tabmenu-btn"
+                data-tab-id="tab-hospital">안전·보건</button><button type="button" class="snl-tabmenu-btn"
+                data-tab-id="tab-safe">문화·복지</button><button type="button" class="snl-tabmenu-btn"
+                data-tab-id="tab-care">교통·편의</button></div>
+    </section>
+    <section class="snl-wrap"
+        style="background-image: url(&quot;https://www.gg.go.kr/uploads/CONTENTS/site/gg/20250121_snl_bg.png&quot;);">
+        <article class="snl" data-tab-box-id="tab-consume" data-tab-title="민생안정">
+            <h6 class="snl-title">민생안정</h6>
+            <article class="snl-row">
+                <div class="snl-row-left">중소기업·소상공인 민생 부담 완화 지원</div>
+                <div class="snl-row-right">
+                    <article class="snl-row-right-item">
+                        <div class="snl-row-right-title"><span class="snl-row-right-title-order">1</span><span>경기 소상공인
+                                힘내GO 카드 지원</span></div>
+                        <ul class="snl-uldotasd1">
+                            <li class="snl-uldotasd1-li">
+                                <p class="snl-uldotasd1-li-str">사업내용 : 전국 최초 소상공인 운영비 전용 카드 지원(최대 5년)</p>
+                                <p class="snl-note snl-note-wid100">필수 물품구매(자재비, 공과금 등) 사용처 한정, 현금서비스·카드론 및 인건비 지급 불가
+                                </p>
+                            </li>
+                            <li class="snl-uldotasd1-li">
+                                <p class="snl-uldotasd1-li-str">지원혜택 : 무이자 최대 6개월, 연회비·보증료 없음, 캐시백 최대 50만원 </p>
+                            </li>
+                            <li class="snl-uldotasd1-li">
+                                <p class="snl-uldotasd1-li-str">지원대상 : 도내 소상공인 30,000여명</p>
+                                <p class="snl-note snl-note-wid100">신용점수 7등급(595점) 이상</p>
+                            </li>
+                            <li class="snl-uldotasd1-li">
+                                <p class="snl-uldotasd1-li-str">공급규모 : 1,500억원(업체당 5백만원 한도) </p>
+                            </li>
+                            <li class="snl-uldotasd1-li">
+                                <p class="snl-uldotasd1-li-str">사업시행 : 25. 1. 6.(월) ~ 한도 소진 시까지 </p>
+                            </li>
+                            <li class="snl-uldotasd1-li">
+                                <p class="snl-uldotasd1-li-str">추진방법 : (접수)경기신보 모바일앱(Easy One) → (카드발급)기업은행</p>
+                            </li>
+                        </ul>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <div class="snl-row-right-title"><span class="snl-row-right-title-order">2</span><span>소상공인 부채
+                                상환연장 특례보증</span></div>
+                        <ul class="snl-uldotasd1">
+                            <li class="snl-uldotasd1-li">
+                                <p class="snl-uldotasd1-li-str">사업내용 : 중·저신용 소상공인 상환 부담 경감</p>
+                            </li>
+                            <li class="snl-uldotasd1-li">
+                                <p class="snl-uldotasd1-li-str">지원대상 : 도내 중·저신용등급 소상공인 </p>
+                            </li>
+                            <li class="snl-uldotasd1-li">
+                                <p class="snl-uldotasd1-li-str">규모/지원기간 : 333억원(업체당 1억원 이내) / 6년(3년 거치 3년 분할상환)</p>
+                            </li>
+                            <li class="snl-uldotasd1-li">
+                                <p class="snl-uldotasd1-li-str">지원혜택 : 총 3%금융비용(이차보전금 2%, 보증료 1%)</p>
+                            </li>
+                        </ul>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <div class="snl-row-right-title"><span class="snl-row-right-title-order">3</span><span>경기소상공인
+                                대환자금 보증</span></div>
+                        <ul class="snl-uldotasd1">
+                            <li class="snl-uldotasd1-li">
+                                <p class="snl-uldotasd1-li-str">지원대상 : 기존 경기도소상공인자금 및 일반대출 이용 소상공인</p>
+                            </li>
+                            <li class="snl-uldotasd1-li">
+                                <p class="snl-uldotasd1-li-str">규모/지원기간 : 1,000억원(업체당 1억원이내) / 5년(1년 거치 4년 균분)</p>
+                                <p class="snl-note snl-note-wid100">우대사항 : 보증비율 90%(2천만원이하 100%), 보증료 연1% 고정</p>
+                            </li>
+                            <li class="snl-uldotasd1-li">
+                                <p class="snl-uldotasd1-li-str">지원혜택 : 이차보전(창업‧점포임차 1.7%, 경영개선‧일반대출 2.0%)</p>
+                            </li>
+                        </ul>
+                    </article>
+                </div>
+            </article>
+            <article class="snl-row">
+                <div class="snl-row-left">설 명절 기간 소비진작 위한 경기지역화폐 인센티브 지원</div>
+                <div class="snl-row-right">
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">사업대상 : 25년 경기지역화폐 발행지원</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">추진기간 : 25. 1. 1.(월) ~ 1. 31.(금)</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">인센티브 : 할인율 10%, 1인당 구매 한도 100만원</p>
+                        <p class="snl-note snl-note-wid100">단, 시·군 재정 상황에 따라 지역화폐 할인율 및 구매한도 상이</p>
+                    </article>
+                </div>
+            </article>
+            <article class="snl-row">
+                <div class="snl-row-left">설 맞이, 2025 031#(공삼일샵) 할인기획전</div>
+                <div class="snl-row-right">
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">지원대상 : 031#(공삼일샵) 입점기업 100여개사 400여개 제품</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">추진기간 : (온라인) 1. 13.(토) ~ 1. 30.(목) / (오프라인) 1. 18.(토) ~ 1. 30.(목)
+                        </p>
+                        <p class="snl-note snl-note-wid100">물류배송 일정을 고려하여 온라인은 1.13.(월) 시행</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">판매장소 : 031#(시흥신세계프리미엄아울렛 매장 및 온라인 쇼핑몰)</p>
+                        <ul class="snl-uldot">
+                            <li class="snl-uldot-li">
+                                <p class="snl-uldot-li-str">온라인 : 설날기획전 30%할인(2만원 한도), 재구매 감사기획전 20% 할인 쿠폰</p>
+                            </li>
+                            <li class="snl-uldot-li">
+                                <p class="snl-uldot-li-str">오프라인 : 설날선물세트 30%할인(2만원 한도), 2만원 이상 결제시 커피 증정</p>
+                            </li>
+                        </ul>
+                    </article>
+                </div>
+            </article>
+            <article class="snl-row">
+                <div class="snl-row-left">2025년 설 맞이 온라인 마켓경기 할인전 추진</div>
+                <div class="snl-row-right">
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">기간 : 25.1.10.(금) ~ 1.31.(금) / 22일간 </p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">품목 : 경기미, 육류, 계란, 가공 선물세트 등 395품목</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">주요내용 : 품목별 20% 할인쿠폰 지원(1일 2만원 한도)</p>
+                    </article>
+                </div>
+            </article>
+            <article class="snl-row">
+                <div class="snl-row-left">경기도 농수산물 할인쿠폰 지원</div>
+                <div class="snl-row-right">
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">기간 : 2025년 1월 ~ 12월</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">내용 : 소비자들이 온·오프라인에서 경기도산 농수산물 구매시 20~30%(1일, 1인 최대 2만원 한도) 할인 지원</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">품목 : 경기도에서 생산된 농수산물, 화훼류, 농식품류 등</p>
+                    </article>
+                </div>
+            </article>
+            <article class="snl-row">
+                <div class="snl-row-left">설 성수식품 등 먹거리안전을 위한 현장확인 및 불법행위 수사</div>
+                <div class="snl-row-right">
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">기간 : 25. 1. 6.(월) ~ 1. 17.(금) / 2주간</p>
+                        <ul class="snl-uldot">
+                            <li class="snl-uldot-li">
+                                <p class="snl-uldot-li-str">수사 전․후 언론홍보 실시로 불법행위 예방(현장활동 시 영업주에게 안내문 제공)</p>
+                            </li>
+                        </ul>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">대상 : 식품 제조․판매업소 360개소(농수산물 식품제조업소․중대형 마트)</p>
+                        <p class="snl-note snl-note-wid100">행정처분 반복, 식품위생 민원다발업체 우선 선정(식약처 등 타기관 점검과 중복 사전 확인)</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">수사내용</p>
+                        <ul class="snl-uldot">
+                            <li class="snl-uldot-li">
+                                <p class="snl-uldot-li-str">원산지 거짓 표시 또는 혼동하게 할 우려가 있는 표시 행위</p>
+                            </li>
+                            <li class="snl-uldot-li">
+                                <p class="snl-uldot-li-str">소비기한 경과제품 판매·보관, 제조·가공 사용 행위</p>
+                            </li>
+                            <li class="snl-uldot-li">
+                                <p class="snl-uldot-li-str">식품의 보존기준을 준수하지 아니하고 진열하는 행위</p>
+                            </li>
+                        </ul>
+                    </article>
+                </div>
+            </article>
+            <article class="snl-row">
+                <div class="snl-row-left">설 명절 대비 성수식품 점검</div>
+                <div class="snl-row-right">
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">설 명절 다소비 식품 위생관리를 위한 지도·점검</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">기간 : 25. 1. 6.(월) ~ 1. 10.(금) / 5일간</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">기관 : 도 및 31개 시군 합동점검 </p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">대상 : 선물용, 제수용 식품 제조·판매업체* 약 835개소</p>
+                        <p class="snl-note snl-note-wid100">떡류, 한과류, 만두류 등 제조업체, 명절 제사음식 조리 판매업체, 대형유통업체 등</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">점검내용 : 소비기한 경과 원료 사용‧판매, 위생관리 준수 여부 등 </p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">수거검사 : 가공식품, 조리식품, 수산물 등 수거검사 140건 병행</p>
+                    </article>
+                </div>
+            </article>
+            <article class="snl-row">
+                <div class="snl-row-left">농·축산물 및 수산물 원산지표시 특별 지도·점검</div>
+                <div class="snl-row-right">
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">기간 : 25. 1. 13.(월) ~ 1. 24.(금)</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">대상 : 도·소매업, 음식점, 즉석조리식품 판매업, 통신판매업 등</p>
+                        <ul class="snl-uldot">
+                            <li class="snl-uldot-li">
+                                <p class="snl-uldot-li-str">제수용 : 소·돼지고기, 도라지, 고사리, 곶감, 즉석조리식품, 돔류 등</p>
+                            </li>
+                            <li class="snl-uldot-li">
+                                <p class="snl-uldot-li-str">선물용 : 갈비세트, 한과, 인삼, 굴비(조기), 건강식품(홍삼, 한약재류 등)</p>
+                            </li>
+                        </ul>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">점검기관 : 도·시군 합동(평택, 여주, 광주, 양주) 및 시·군 자체 점검</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">조치사항 : 거짓표시(고발), 미표시 및 표시위반(과태료)</p>
+                    </article>
+                </div>
+            </article>
+            <article class="snl-row">
+                <div class="snl-row-left">대형 물류센터 및 유통매장·백화점 농수축산물 안전성검사</div>
+                <div class="snl-row-right">
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">점검기간 : 25. 1. 6.(월) ~ 1. 27.(월)</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">검사대상 : 물류센터, 백화점, 대형유통매장 </p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">검사항목 : 농약/농산물, 방사능ꞏ중금속/수산물, 항생제/축산물 </p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">검사협업 : 보건환경연구원(농수산물), 동물위생시험소(축산물)</p>
+                        <p class="snl-note snl-note-wid100">명절 제수․선물용 다소비 품목(사과, 배, 육류, 나물류 등) 집중 수거검사</p>
+                    </article>
+                </div>
+            </article>
+            <article class="snl-row">
+                <div class="snl-row-left">임금체불 신고센터 운영</div>
+                <div class="snl-row-right">
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">설 연휴기간 노동권익센터 내 임금체불 신고센터 운영(유선 상담)</p>
+                        <ul class="snl-uldot">
+                            <li class="snl-uldot-li">
+                                <p class="snl-uldot-li-str">임금체불 민원 접수 및 체불 여부 확인</p>
+                            </li>
+                            <li class="snl-uldot-li">
+                                <p class="snl-uldot-li-str">체불 확인시 체불액 및 진정 절차 및 마을노무사 지원 안내</p>
+                            </li>
+                        </ul>
+                    </article>
+                </div>
+            </article>
+            <article class="snl-row">
+                <div class="snl-row-left">설 연휴대비 임금체불 집중상담</div>
+                <div class="snl-row-right">
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">운영기간 : 25. 1. 13.(월) ~ 1. 24.(금), 09:30 ~ 19:00(평일 운영)</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">운영장소 : 4개 역사</p>
+                        <ul class="snl-uldot">
+                            <li class="snl-uldot-li">
+                                <p class="snl-uldot-li-str">수원역 노동권익센터(상시), 의정부역(2회), 춘의역(2회), 평택지역 전철역(2회)</p>
+                            </li>
+                        </ul>
+                        <p class="snl-note snl-note-wid100">구체적 운영일정 및 시간은 해당 지역 노동자지원센터와 협의 후 확정</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">상담사 : 도 노동권익센터 노무사 및 시군노동자지원센터 노무사</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">상담 후 조치사항</p>
+                        <ul class="snl-uldot">
+                            <li class="snl-uldot-li">
+                                <p class="snl-uldot-li-str">임금체불 확인시 마을노무사 연계한 권리구제 지원 연계</p>
+                            </li>
+                            <li class="snl-uldot-li">
+                                <p class="snl-uldot-li-str">고용노동부 「체불예방·청산 집중지도 기간」과 연계하여 조기 청산 유도</p>
+                            </li>
+                        </ul>
+                    </article>
+                </div>
+            </article>
+        </article>
+        <article class="snl" data-tab-box-id="tab-hospital" data-tab-title="안전·보건">
+            <h6 class="snl-title">안전·보건</h6>
+            <article class="snl-row">
+                <div class="snl-row-left">설 명절 비상응급 특별 대응주간</div>
+                <div class="snl-row-right">
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">운영기간 : 25. 1. 25.(토) ~ 2. 2.(일)</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">도, 31개 시·군 비상응급체계 구축하여 현장 상황 관리 강화 </p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">74개 응급의료기관 1:1 책임관 지정 운영하여 집중관리체계 가동 </p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">문 여는 병의원 및 약국 운영 개소 수 <span class="snl-note">확대 추진</span></p>
+                        <p class="snl-note snl-note-wid100">문 여는 의료기관 : 207개소(지난 설 당일) → 269개소(이번 설 당일)</p>
+                    </article>
+                </div>
+            </article>
+            <article class="snl-row">
+                <div class="snl-row-left">「경기도 응급진료 상황실」 상시 운영</div>
+                <div class="snl-row-right">
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">운영기간 : 25. 1. 25.(토) ~ 2. 2.(일)</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">운영개소 : 50개소 (도 1, 시·군 보건소 49개소)</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">근무인원 : 총 9명(1일 1명 이상) 근무 (시․군은 자체실정에 맞게 운영)</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">근무시간 : 09:00~18:00 (18:00 이후 비상 연락망 유지)</p>
+                        <p class="snl-note snl-note-wid100">설 연휴(1. 27. ~ 1. 30.) 사무실 근무, 그 외 기간은 한파 대비 비상대응체계에 따라 자택 또는
+                            사무실 근무</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">주요업무 : 응급 진료민원 안내 및 대규모 환자 발생 시 대응 등</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">경기도 응급의료기관 현황 (25.1.1. 기준)</p><a class="snl-row-linkinline"
+                            target="_blank" title="다운로드"
+                            href="https://www.gg.go.kr/uploads/CONTENTS/site/gg/경기도 응급의료기관 현황 (25.1.1. 기준).pdf">다운로드</a>
+                    </article>
+                </div>
+            </article>
+            <article class="snl-row">
+                <div class="snl-row-left">감염병 비상 방역체계 운영</div>
+                <div class="snl-row-right">
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">운영기간 : 25.1.25.(토) ~ 1.30.(목)</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">운영기관 : 질병관리청, 도·시군보건소, 의료기관 등</p>
+                        <p class="snl-note snl-note-wid100">국가지정 입원치료병상 : 분당서울대병원 등 4개소 38병상</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">운영시간 : 24시간</p>
+                        <p class="snl-note snl-note-wid100">신고(보건소) ▶ 의심환자 분류(도 역학조사팀), 국가지정 격리병상 배정(도 감염병관리팀)</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">주요내용 : 1급 감염병 의심 증상 발생·유증상자 신고 시 신속 대응 조치</p>
+                        <p class="snl-note snl-note-wid100">의사환자 분류 → 신속 병상배정 및 격리 입원 → 결과 보고</p>
+                    </article>
+                </div>
+            </article>
+            <article class="snl-row">
+                <div class="snl-row-left">겨울철 코로나19 및 독감 등 호흡기감염병 유행 대비</div>
+                <div class="snl-row-right">
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">겨울철 코로나19등 재유행 시 응급실 과밀화 방지를 위한 경증환자 치료기관 운영</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">운영현황 : 발열클리닉 23개소, 협력병원 40개소(예정) ※지정권자 : 보건복지부</p>
+                        <ul class="snl-uldot">
+                            <li class="snl-uldot-li">
+                                <p class="snl-uldot-li-str">발열클리닉 : 평일 야간, 주말·공휴일 외래 진료(운영기간 : 24.12.23.~25.2.28.)</p>
+                            </li>
+                            <li class="snl-uldot-li">
+                                <p class="snl-uldot-li-str">협력병원 : 코로나19 확진자·의사환자 입원 치료(운영예정기간 : 25.1.22.~2.5.) </p>
+                            </li>
+                        </ul>
+                    </article>
+                </div>
+            </article>
+            <article class="snl-row">
+                <div class="snl-row-left">설 연휴 재난상황 대비 24시간 관리</div>
+                <div class="snl-row-right">
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">재난 발생 시 신속·정확한 재난상황 보고·전파(연중상시)</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">재난안전통신망 정기교신을 통해 재난상황 상시 보고 체계 구축</p>
+                        <p class="snl-note snl-note-wid100">시·군, 소방, 경찰, 해경, 군, 의료, 전기, 가스 등 기관간 교신(일 1회) / 행안부 교신(일 1회)
+                        </p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">재난상황 및 도민안전 위험 판단 시 재난문자방송 긴급 송출</p>
+                    </article>
+                </div>
+            </article>
+            <article class="snl-row">
+                <div class="snl-row-left">대형 판매시설 안전관리 실태점검</div>
+                <div class="snl-row-right">
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">점검기간 : 25.1.6.(월) ~ 1.20.(월)</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">점검대상 : 안양 등 13개 시 15개소</p>
+                        <p class="snl-note snl-note-wid100">도내 판매시설(연면적 5,000㎡ 이상) 총 125개소 대상 중 규모가 크고 이용객이 많은 시설 선정, 그
+                            외 시·군은 자체점검 병행</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">점검방법 : 민관합동점검(도(道) 및 안전관리자문단, 시·군, 전기·가스 안전공사 등)</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">향후계획</p>
+                        <ul class="snl-uldot">
+                            <li class="snl-uldot-li">
+                                <p class="snl-uldot-li-str">점검결과에 따른 현지 시정 및 보수·보강 등 안전조치 명령</p>
+                            </li>
+                            <li class="snl-uldot-li">
+                                <p class="snl-uldot-li-str">유사사례 재발 방지를 위한 안전점검 결과 시·군 전파 및 공유</p>
+                            </li>
+                        </ul>
+                    </article>
+                </div>
+            </article>
+            <article class="snl-row">
+                <div class="snl-row-left">가스 및 전기 안전관리 대책반 운영</div>
+                <div class="snl-row-right">
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">기간 : 25.1.28.(화) ~ 1.30.(목) / 3일간</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">구성 : 도 에너지관리과(가스·전기 대책반) / 재택 비상근무(유선대기)</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">내용 : 사고발생 시 긴급 상황대응</p>
+                        <ul class="snl-uldot">
+                            <li class="snl-uldot-li">
+                                <p class="snl-uldot-li-str">가스 및 정전사고 발생 시 신속한 대응 및 유관기관(한국가스안전공사, 한국전력공사, 한국전기안전공사 등)
+                                    상황전파</p>
+                            </li>
+                            <li class="snl-uldot-li">
+                                <p class="snl-uldot-li-str">긴급 초기대응 실시(배관차단 및 주민 대피, 비상전력 지원 요청 등)</p>
+                            </li>
+                            <li class="snl-uldot-li">
+                                <p class="snl-uldot-li-str">사고원인 및 피해규모 등 파악, 긴급 구조활동 지원</p>
+                            </li>
+                        </ul>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">비상대응 체계 안내</p><a class="snl-row-linkinline" target="_blank"
+                            title="다운로드"
+                            href="https://www.gg.go.kr/uploads/CONTENTS/site/gg/가스 및 전기 사고 비상대응 체계 안내.pdf">다운로드</a>
+                    </article>
+                </div>
+            </article>
+            <article class="snl-row">
+                <div class="snl-row-left">범죄 취약요소 진단 및 지역 특성 반영 범죄예방 활동</div>
+                <div class="snl-row-right">
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">취약요소 점검·관리 : 명절기간 주요 범죄발생 장소 및 취약시설(전통 시장, 무인점포 등) 점검, 방범시설 확충 및 개선
+                            필요사항 대책마련 촉구</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">가시적 예방활동 : 순찰강화, 범죄예방교육·캠페인, 환경개선 등 취약요소에 적합한 치안 대책 추진</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">협력치안 강화 : 자율방범대 등 방범 협력단체와 합동순찰, 시군 및 치안협력기관과의 협업을 통한 공동체 치안활동 강화
+                        </p>
+                    </article>
+                </div>
+            </article>
+            <article class="snl-row">
+                <div class="snl-row-left">설 명절 다중운집 상황 안전관리 지원</div>
+                <div class="snl-row-right">
+                    <article class="snl-row-right-item">
+                        <div class="snl-row-right-title"><span>경찰·소방·도·시·군 등 합동대응체계 구축, 다중운집 예상 장소 사전 면밀히 파악, 기차역 등 인파
+                                운집 시설주 대상 대비 강화 촉구</span></div>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">필요시 기동대 등 경찰력 선점배치, 유관기관 합동 인파관리</p>
+                    </article>
+                </div>
+            </article>
+            <article class="snl-row">
+                <div class="snl-row-left">가정폭력·아동학대 예방 및 보호·지원</div>
+                <div class="snl-row-right">
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">고위험군 모니터링 : 가정폭력 재발우려 가정, 아동학대 고위험군 및 수사중인 사건 모니터링 실시</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">정보공유 : 모니터링 결과, 최근 신고 이력, 보호조치 내역 등을 종합하여 고위험군 대상 분류→ 관련부서 공유</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">사건관리 : 경미사안이더라도 과거전력(신고내역 등)을 면밀히 확인하고 재범우려 등을 종합적으로 고려·관리</p>
+                        <ul class="snl-uldot">
+                            <li class="snl-uldot-li">
+                                <p class="snl-uldot-li-str">가정폭력·아동학대 사건 전수 합동조사, 시군협업 아동학대 사건 명절 기간 중 응급조치 및 즉각분리조치를 통한
+                                    보호공백 최소화</p>
+                            </li>
+                        </ul>
+                    </article>
+                </div>
+            </article>
+        </article>
+        <article class="snl" data-tab-box-id="tab-safe" data-tab-title="문화·복지">
+            <h6 class="snl-title">문화·복지</h6>
+            <article class="snl-row">
+                <div class="snl-row-left">설 기간 방문 가능한 관광지</div>
+                <div class="snl-row-right">
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">23개 시군 44개소</p>
+                        <p class="snl-note snl-note-wid100">전체 무장애 관광시설</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">설 기간 방문 가능한 관광지</p><a class="snl-row-linkinline" target="_blank"
+                            title="다운로드"
+                            href="https://www.gg.go.kr/uploads/CONTENTS/site/gg/%EC%84%A4%20%EA%B8%B0%EA%B0%84%20%EB%B0%A9%EB%AC%B8%20%EA%B0%80%EB%8A%A5%ED%95%9C%20%EA%B4%80%EA%B4%91%EC%A7%80.pdf">다운로드</a>
+                    </article>
+                </div>
+            </article>
+            <article class="snl-row">
+                <div class="snl-row-left">설 연휴 박물관·미술관 탐방하기</div>
+                <div class="snl-row-right">
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">운영기관 : 도내 공립 박물관 및 미술관 </p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">주요내용 : 무료 관람할 수 있는 상설 및 기획전시 프로그램 운영</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">전시기간 : 설 연휴 기간 중 운영(명절 당일 휴관)</p>
+                    </article>
+                </div>
+            </article>
+            <article class="snl-row">
+                <div class="snl-row-left">도내 공립 박물관·미술관 전시 현황</div>
+                <div class="snl-row-right">
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">8개 시·군, 14개관 </p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">도내 공립 박물관·미술관 전시 현황</p><a class="snl-row-linkinline" target="_blank"
+                            title="다운로드"
+                            href="https://www.gg.go.kr/uploads/CONTENTS/site/gg/도내 공립 박물관·미술관 전시 현황.pdf ">다운로드</a>
+                    </article>
+                </div>
+            </article>
+            <article class="snl-row">
+                <div class="snl-row-left">노인‧장애인 기회경기관람권을 통한 프로스포츠 관람할인</div>
+                <div class="snl-row-right">
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">이용대상 : 노인(70세이상) 및 동반 1인, 장애인 및 동반 1인</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">지원방법 : 경기도내 프로스포츠단 입장권 구매시 관람료 정액 1,000원</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">신청방법 : 현장구매, 각 구단 홈페이지 및 인터넷 구매대행사 </p>
+                        <p class="snl-note snl-note-wid100">신분증, 장애인등록증 등 증명서 지참 필수</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">연휴기간 프로스포츠 일정 </p>
+                        <ul class="snl-uldot">
+                            <li class="snl-uldot-li">
+                                <p class="snl-uldot-li-str">농구(남) / 고양 소노 vs 안양 정관장 / 1.28.(화) / 경기 지역 : 고양</p>
+                            </li>
+                            <li class="snl-uldot-li">
+                                <p class="snl-uldot-li-str">배구(여) / 현대건설 vs GS칼텍스 / 1.29.(수) / 경기 지역 : 수원 </p>
+                            </li>
+                        </ul>
+                    </article>
+                </div>
+            </article>
+            <article class="snl-row">
+                <div class="snl-row-left">한파대비 안전취약계층 난방비 긴급지원</div>
+                <div class="snl-row-right">
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">지원대상 : 기초생활수급자 및 차상위 계층</p>
+                        <p class="snl-note snl-note-wid100">보장시설수급자, 경기도 노인·장애인 난방비 기지원 대상자 제외</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">지원내용 : 가구당 난방비 5만원 지원(25.1월)</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">지급방법 : 계좌입금 ※ 예외적으로 현금 지급</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">설 연휴 전에 지급될 수 있도록 적극 추진</p>
+                    </article>
+                </div>
+            </article>
+            <article class="snl-row">
+                <div class="snl-row-left">복지사각지대 위기가구 상담·지원</div>
+                <div class="snl-row-right">
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">운영 : 설기간 긴급복지 핫라인 등 4개 채널</p>
+                        <ul class="snl-uldot">
+                            <li class="snl-uldot-li">
+                                <p class="snl-uldot-li-str">010-4419-7722 </p>
+                            </li>
+                            <li class="snl-uldot-li">
+                                <p class="snl-uldot-li-str">031-120 </p>
+                            </li>
+                            <li class="snl-uldot-li">
+                                <p class="snl-uldot-li-str">홈페이지</p><a class="snl-row-linkinline nobg" target="_blank"
+                                    title="(gg.go.kr/welfarehotline)"
+                                    href="https://gg.go.kr/welfarehotline">(gg.go.kr/welfarehotline)</a>
+                            </li>
+                            <li class="snl-uldot-li">
+                                <p class="snl-uldot-li-str">경기복G톡(카카오톡 채널)</p>
+                            </li>
+                        </ul>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">내용 : 긴급복지 핫라인을 통한 상담 및 복지지원 연계</p>
+                    </article>
+                </div>
+            </article>
+            <article class="snl-row">
+                <div class="snl-row-left">노숙인 안전관리</div>
+                <div class="snl-row-right">
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">급식지원</p>
+                        <ul class="snl-uldot">
+                            <li class="snl-uldot-li">
+                                <p class="snl-uldot-li-str">공공 및 민간급식소 이용·연계를 통한 거리노숙인 도시락 등 지원</p>
+                            </li>
+                            <li class="snl-uldot-li">
+                                <p class="snl-uldot-li-str">설 연휴기간 운영되는 무료급식소 현황 파악하여 필요시 이용할 수 있도록 안내</p>
+                            </li>
+                            <li class="snl-uldot-li">
+                                <p class="snl-uldot-li-str">시설노숙인 명절음식 제공 및 1일 1~3식 급식 지원</p>
+                            </li>
+                        </ul>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">거리노숙인 건강관리</p>
+                        <ul class="snl-uldot">
+                            <li class="snl-uldot-li">
+                                <p class="snl-uldot-li-str">거리노숙인 현장보호 활동을 통한 구호물품 지급(생수, 핫팩, 식료품 등) </p>
+                            </li>
+                            <li class="snl-uldot-li">
+                                <p class="snl-uldot-li-str">거리노숙인 건강체크를 통해 비상약품 지급 및 병원이송 지원</p>
+                            </li>
+                        </ul>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">노숙인시설 안전관리</p>
+                        <ul class="snl-uldot">
+                            <li class="snl-uldot-li">
+                                <p class="snl-uldot-li-str">시설별 관리자를 통한 입소자 건강체크 모니터링 및 시설물 안전관리</p>
+                            </li>
+                            <li class="snl-uldot-li">
+                                <p class="snl-uldot-li-str">노숙인시설(17개소*) 연휴 근무자 편성·비상연락망 구축(도↔시·군↔시설)</p>
+                                <p class="snl-note snl-note-wid100">17개소 : 노숙인 종합지원센터 3, 일시보호 1, 자활 7, 재활 3, 요양 1, 급식 2
+                                </p>
+                            </li>
+                        </ul>
+                    </article>
+                </div>
+            </article>
+            <article class="snl-row">
+                <div class="snl-row-left">취약노인 안전관리</div>
+                <div class="snl-row-right">
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">안전 확인체계 구축 및 안전확인 강화</p>
+                        <ul class="snl-uldot">
+                            <li class="snl-uldot-li">
+                                <p class="snl-uldot-li-str">취약노인 피해상황 및 주요 조치사항 등 상황보고 체계 정비</p>
+                            </li>
+                            <li class="snl-uldot-li">
+                                <p class="snl-uldot-li-str">취약노인 가구 사전점검(비상연락망 확인, 생활실태 및 건강상태 체크)</p>
+                            </li>
+                        </ul>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">중점돌봄군* 취약노인 3,173명 집중 안전확인 강화
+                        <p class="snl-note snl-note-wid100">중점돌봄군 : 신체적, 사회적, 정신적으로 돌봄필요도가 높은 고위험 대상자</p>
+                        </p>
+                        <ul class="snl-uldot">
+                            <li class="snl-uldot-li">
+                                <p class="snl-uldot-li-str">연휴 전·후 : 방문·유선·IoT 장비를 활용한 취약노인 전원 안부확인</p>
+                            </li>
+                            <li class="snl-uldot-li">
+                                <p class="snl-uldot-li-str">연휴 기간 : 시군별 고위험 대상자 동향관리철저 및 즉시 보고체계 유지</p>
+                            </li>
+                        </ul>
+                    </article>
+                </div>
+            </article>
+            <article class="snl-row">
+                <div class="snl-row-left">취약장애인 안전관리</div>
+                <div class="snl-row-right">
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">설 맞이 취약장애인 안전확인 강화 및 긴급 대응 체계 구축</p>
+                        <ul class="snl-uldot">
+                            <li class="snl-uldot-li">
+                                <p class="snl-uldot-li-str">취약장애인 피해상황 및 주요 조치사항 등 상황보고 체계 정비</p>
+                            </li>
+                            <li class="snl-uldot-li">
+                                <p class="snl-uldot-li-str">취약장애인 가구 사전점검(활동지원사 등 비상연락망 구축, 생활·건강상태 체크)</p>
+                            </li>
+                            <li class="snl-uldot-li">
+                                <p class="snl-uldot-li-str">연휴 전·후 : 방문·유선·IoT 장비를 활용한 취약장애인 전원 안부확인</p>
+                            </li>
+                            <li class="snl-uldot-li">
+                                <p class="snl-uldot-li-str">연휴 기간 : 비상연락체계 구축 등 동향관리 철저(특이사항 즉시 보고체계 유지)</p>
+                            </li>
+                        </ul>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">장애인 일시 보호 및 피해 이용시설 운영</p>
+                        <ul class="snl-uldot">
+                            <li class="snl-uldot-li">
+                                <p class="snl-uldot-li-str">경기도 피해장애인 쉼터 : 피해 장애인 일시보호 및 심리지원 등(2개소)</p>
+                            </li>
+                            <li class="snl-uldot-li">
+                                <p class="snl-uldot-li-str">경기도 피해장애아동 쉼터 : 피해 장애아동 일시보호 및 심리지원 등(2개소)</p>
+                            </li>
+                            <li class="snl-uldot-li">
+                                <p class="snl-uldot-li-str">장애인 365쉼터 : 긴급보호가 필요한 중증 재가 장애인 일시보호제공(15개소)</p>
+                            </li>
+                        </ul>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">긴급보호가 필요한 장애인 일시 보호시설 현황</p><a class="snl-row-linkinline"
+                            target="_blank" title="다운로드"
+                            href="https://www.gg.go.kr/uploads/CONTENTS/site/gg/%EA%B8%B4%EA%B8%89%EB%B3%B4%ED%98%B8%EA%B0%80%20%ED%95%84%EC%9A%94%ED%95%9C%20%EC%9E%A5%EC%95%A0%EC%9D%B8%20%EC%9D%BC%EC%8B%9C%20%EB%B3%B4%ED%98%B8%EC%8B%9C%EC%84%A4%20%ED%98%84%ED%99%A9.pdf">다운로드</a>
+                    </article>
+                </div>
+            </article>
+            <article class="snl-row">
+                <div class="snl-row-left">청소년 상담전화 1388 운영</div>
+                <div class="snl-row-right">
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">지원대상 : 청소년 상담이 필요한 도민 누구나</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">이용방법 : (일반전화)1388 (휴대전화)<a class="sn-tel"
+                                href="tel:0311388">031-1388</a> / 연중 365일 24시간 운영</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">주요내용 : ‘청소년전화 1388’을 통해 위기청소년 발견⋅구조와 상담⋅보호 등의 서비스 지원 </p>
+                    </article>
+                </div>
+            </article>
+            <article class="snl-row">
+                <div class="snl-row-left">가정 밖 청소년 보호 서비스 지원</div>
+                <div class="snl-row-right">
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">지원대상 : 9 ~ 24세 가정 밖 청소년 누구나</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">운영기관 : 도내 32개 청소년쉼터</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">운영시간 : 24시간 개방·운영</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">이용방법 : 청소년쉼터 또는 청소년전화 1388로 문의</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">주요내용 : 가정 밖 청소년 긴급일시보호 및 상담·주거·학업·자립 등 지원</p>
+                    </article>
+                </div>
+            </article>
+            <article class="snl-row">
+                <div class="snl-row-left">자립준비청소년 대상 설날맞이 생필품 지원</div>
+                <div class="snl-row-right">
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">지원대상 : 18 ~ 24세 자립준비청소년 67명</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">운영기관 : 경기도청소년자립지원관(남부, 북부)</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">지원기간 : 25.1.23.(목) ~ 1.30.(목)</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">지원내용 : 설 명절을 홀로 지내는 자립준비청소년을 위해 명절음식 등 생필품(1인 15만원 이내) 지원</p>
+                    </article>
+                </div>
+            </article>
+            <article class="snl-row">
+                <div class="snl-row-left">결식아동 급식지원 대책</div>
+                <div class="snl-row-right">
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">지원대상 : 설 명절 연휴 기간 결식 우려로 지원이 필요한 아동</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">주요내용 : 설 연휴 기간 시·군별 아동급식 지원대책 마련 및 지원 실시</p>
+                        <ul class="snl-uldot">
+                            <li class="snl-uldot-li">
+                                <p class="snl-uldot-li-str">설 연휴기간 중 급식 제공 업체 휴무에 따른 사전 대체 수단 확보</p>
+                            </li>
+                        </ul>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">아동급식카드 사용 가맹점 현황 안내, 아동급식카드 추가 충전, 단체급식소 및 도시락 업체 휴무 시 대체식품·부식 제공
+                            등으로 연휴 시작 전 사전 조치</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">연휴기간에 급식 제공 가능 이웃 주민 등 사전 파악, 아동 및 보호자 연계</p>
+                        <ul class="snl-uldot">
+                            <li class="snl-uldot-li">
+                                <p class="snl-uldot-li-str">민·관 네트워크(이·통·반장, 부녀회 등) 구축으로 급식 필요 아동 발굴·지원</p>
+                            </li>
+                            <li class="snl-uldot-li">
+                                <p class="snl-uldot-li-str">각 시․군 당직실 등을 활용한 비상연락망 체계 구축으로 급식사각지대 발생 방지</p>
+                            </li>
+                            <li class="snl-uldot-li">
+                                <p class="snl-uldot-li-str">식중독 발생에 대비하여 위생관리 철저</p>
+                            </li>
+                        </ul>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">시·군 협조사항 : 시·군별 설 연휴 아동급식 지원대책 수립 및 모니터링 실시</p>
+                    </article>
+                </div>
+            </article>
+        </article>
+        <article class="snl" data-tab-box-id="tab-care" data-tab-title="교통·편의">
+            <h6 class="snl-title">교통·편의</h6>
+            <article class="snl-row">
+                <div class="snl-row-left">특별교통대책 상황실 운영</div>
+                <div class="snl-row-right">
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">기간 : 25.1.24.(금) ~ 2.2.(일) / 10일간</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">구성 : 2개반 60명(시군은 자체 근무반 편성)</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">종합대책반(의정부) : 교통국 4개 과 근무(20명, 2명/1일)</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">교통정보반(수원) : 교통정보센터 근무(40명, 4명/1일)</p>
+                    </article>
+                </div>
+            </article>
+            <article class="snl-row">
+                <div class="snl-row-left">설 명절 대중교통 탄력적 대치</div>
+                <div class="snl-row-right">
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">시외(직행)버스 탄력 운행 실시</p>
+                        <ul class="snl-uldot">
+                            <li class="snl-uldot-li">
+                                <p class="snl-uldot-li-str">연휴기간 귀성객 등 수요에 따라 운행계통별 탄력적 시행</p>
+                            </li>
+                            <li class="snl-uldot-li">
+                                <p class="snl-uldot-li-str">수요 발생 시 여객자동차 운송사업 계획 변경(개선명령) 추진</p>
+                            </li>
+                        </ul>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">시외버스 증회계획</p><a class="snl-row-linkinline" target="_blank"
+                            title="다운로드"
+                            href="https://www.gg.go.kr/uploads/CONTENTS/site/gg/설 연휴 시외버스 증회계획.pdf">다운로드</a>
+                        <p class="snl-note snl-note-wid100">5개 권역, 44개 노선, 88대 증차(138회 증회)</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">시내·마을버스 시군 실정에 맞게 막차 1시간 연장</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">택시 운행 독려</p>
+                        <ul class="snl-uldot">
+                            <li class="snl-uldot-li">
+                                <p class="snl-uldot-li-str">도내 4개 단체(법인조합, 개인조합, 전택 경기지부, 민택 경기지부) 대상 설 연휴 수요가 증가하는 교통시설
+                                    등에 대한 운행 독려 협조 요청</p>
+                            </li>
+                        </ul>
+                    </article>
+                </div>
+            </article>
+            <article class="snl-row">
+                <div class="snl-row-left">교통관리 강화 및 교통안전 확보</div>
+                <div class="snl-row-right">
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">도로 소통(교통)정보 및 버스정보 제공</p>
+                        <ul class="snl-uldot">
+                            <li class="snl-uldot-li">
+                                <p class="snl-uldot-li-str">홈페이지·앱, 도로전광표지(VMS), SNS, 전화(1688-9090) 등을 통해 도 내 주요도로
+                                    소통(교통)상황 실시간 제공</p>
+                                <p class="snl-note snl-note-wid100">제공 정보 : 지정체 현황, 빠른길 안내, 돌발상황(교통사고, 통제구역), 버스노선 현황,
+                                    정류소별 버스도착정보 안내*, 길찾기 등</p>
+                                <p class="snl-note snl-note-wid100">스마트폰, 홈페이지, <a href="tel:16888031"
+                                        class="sn-tel">ARS(1688-8031)</a>, 민간포털을 통해 버스정보 제공</p>
+                            </li>
+                            <li class="snl-uldot-li">
+                                <p class="snl-uldot-li-str">도 교통대책상황실, 소방재난상황실 등과 연계하여 교통상황 신속대처 및 민원응대</p>
+                            </li>
+                        </ul>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">고속도로 우회노선</p><a class="snl-row-linkinline" target="_blank"
+                            title="다운로드"
+                            href="https://www.gg.go.kr/uploads/CONTENTS/site/gg/%EA%B3%A0%EC%86%8D%EB%8F%84%EB%A1%9C%20%EC%9A%B0%ED%9A%8C%EB%85%B8%EC%84%A0.pdf">다운로드</a>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">상습 지정체구간 주요국도 우회도로 안내</p><a class="snl-row-linkinline"
+                            target="_blank" title="다운로드"
+                            href="https://www.gg.go.kr/uploads/CONTENTS/site/gg/%EC%83%81%EC%8A%B5%20%EC%A7%80%EC%A0%95%EC%B2%B4%EA%B5%AC%EA%B0%84%20%EC%A3%BC%EC%9A%94%EA%B5%AD%EB%8F%84%20%EC%9A%B0%ED%9A%8C%EB%8F%84%EB%A1%9C%20%EC%95%88%EB%82%B4.pdf">다운로드</a>
+                    </article>
+                </div>
+            </article>
+            <article class="snl-row">
+                <div class="snl-row-left">24시간 120경기도콜센터 운영</div>
+                <div class="snl-row-right">
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">기간 : 2025. 1. 25.(토) ~ 1. 30.(목) / 6일간</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">운영 : 비상근무조 편성으로 연휴 기간 내 24시간 운영</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">인원 : 총 179명 ※ 29명 / 일</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">콜센터팀 직원 : 6명(1명/1일) / 상담사 : 173명(주간 105, 저녁 53, 야간 15)</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">처리내용 : 교통정보, 응급의료기관 안내, 민원신고 접수 및 외국어상담 등</p>
+                    </article>
+                </div>
+            </article>
+            <article class="snl-row">
+                <div class="snl-row-left">종합상황실 운영</div>
+                <div class="snl-row-right">
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">기간 : 25.1.25.(토) ~ 1.30.(목)</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">인원 : 16개 실·국 41개 근무반 / 1,579명</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">역할 : 각종 민원 공조처리, 긴급연락체계 운영 및 상황유지·보고</p>
+                    </article>
+                </div>
+            </article>
+            <article class="snl-row">
+                <div class="snl-row-left">북부청사 종합상황실 운영</div>
+                <div class="snl-row-right">
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">기간 : 25.1.25.(토) ~ 1.30.(목) / 6일간</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">장소 : 행정관리담당관</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">인원 : 3명 (행정관리담당관 / 1일 1명)</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">시간 : 주간 (9:00 ~ 18:00)</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">운영 : 북부지역 상황 및 민원 관리 등 상황근무 운영</p>
+                        <ul class="snl-uldot">
+                            <li class="snl-uldot-li">
+                                <p class="snl-uldot-li-str">행정2부지사 소관 실․국별 비상근무 상황 보고</p>
+                            </li>
+                        </ul>
+                    </article>
+                </div>
+            </article>
+            <article class="snl-row">
+                <div class="snl-row-left">설 연휴 생활폐기물 관리대책</div>
+                <div class="snl-row-right">
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">설 연휴기간 중 쓰레기 수거일정을 사전에 공지하여 주민 혼란 최소화</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">쓰레기 미수거일에 시·군 기동반 투입으로 신속한 민원 해결</p>
+                        <p class="snl-note snl-note-wid100">추진기간 : 25.1.28.(화) ~ 1.30.(목) / 3일간</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">생활폐기물 수거 민원 관련 시·군 상황반 처리 지시</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">생활폐기물 다량 발생 대비 인근 시·군 간의 상호협력 체계 구축 및 조정</p>
+                        <p class="snl-note snl-note-wid100">배출쓰레기는 시·군 수거업체에서 수거하여 공공매립장, 소각장 및 음식물폐기물 처리 시설에서 처리</p>
+                    </article>
+                    <article class="snl-row-right-item">
+                        <p class="snl-row-right-d1">자원순환과 자원순환정책팀 3인 비상근무 편성(재택, 1인/일)</p>
+                    </article>
+                </div>
+            </article>
+        </article>
+    </section>
+</div>
+
+<!-- 스크립트 -->
+<script>
+    /** DOM 준비 다 되면 시작 */
+    document.addEventListener("DOMContentLoaded", async () => {
+        /* ------------------------------ */
+        /* (EVENT) */
+        const $tabMenu = document.querySelector(".snl-tabmenu");
+
+        /**
+         * 
+         * @param {*} tabId 
+         */
+        const toggleTabBtn = (tabId, bool = true) => {
+            const $$btn = $tabMenu.querySelectorAll(".snl-tabmenu-btn");
+            Array.prototype.forEach.call($$btn, ($sib) => {
+                const match = $sib.dataset.tabId === tabId;
+                $sib.classList.toggle("on", match);
+            });
+        }//toggleBtn
+
+        /* 탭메뉴 클릭시 */
+        $tabMenu.addEventListener("click", (e) => {
+            const $btn = e.target;
+            const scY = window.scrollY || document.documentElement.scrollTop;
+
+            /* early return(1) */
+            if (e.target.tagName != "BUTTON" || !e.target.classList.contains("snl-tabmenu-btn")) { return; }
+
+            /* early return(2) */
+            const tabId = $btn.dataset.tabId;
+            if (!tabId) { return; }
+
+            /* 스크롤 이동 */
+            const $target = document.querySelector(`[data-tab-box-id="${tabId}"]`);
+            if (!$target) { console.error("no target DOM", tabId); return; }
+            const offset = $tabMenu.offsetHeight;
+            const targetPosition = $target.getBoundingClientRect().top + scY - offset + 1;
+            scrollTo({
+                top: targetPosition,
+                behavior: "instant"
+            });
+
+            /* 버튼 on toggle */
+            toggleTabBtn(tabId);
+        });
+
+        const $$snl = document.querySelectorAll(".snl");
+        const getTabIdFromBoxThenToggle = ($snl) => {
+            const tabId = $snl.dataset.tabBoxId;
+            const isOn = document.querySelector(".snl-tabmenu-btn.on").dataset.tabId === tabId;
+            if (isOn) { return; }
+            toggleTabBtn(tabId);
+        }
+        window.addEventListener("scroll", () => {
+            const offset = $tabMenu.offsetHeight;
+            const scY = window.scrollY || document.documentElement.scrollTop;
+            /* 메뉴 fixed toggle */
+            if (scY >= $tabMenu.parentElement.getBoundingClientRect().top + scY) {
+                $tabMenu.classList.add("fixed");
+            } else {
+                $tabMenu.classList.remove("fixed");
+            }
+            /* .on 표시 */
+            if (scY < $$snl[1].getBoundingClientRect().top + scY - offset) {
+                getTabIdFromBoxThenToggle($$snl[0]);
+            } else if (scY < $$snl[2].getBoundingClientRect().top + scY - offset) {
+                getTabIdFromBoxThenToggle($$snl[1]);
+            } else if (scY < $$snl[3].getBoundingClientRect().top + scY - offset) {
+                getTabIdFromBoxThenToggle($$snl[2]);
+            } else {
+                getTabIdFromBoxThenToggle($$snl[3]);
+            }
+        });
+    });//DOMContentLoaded
+</script>
