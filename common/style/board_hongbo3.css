@@ -1,0 +1,184 @@
+@charset "utf-8";
+/** 
+* 경기도청 오늘의 기회 custom css v3
+*/
+/* 폰트 - Pretendard */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+/* 폰트 - (영)Outfit */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+/* [하단 썸네일 및 첨부파일 미리보기 삭제] */
+.owl-carousel.owl-theme {
+    display: none !important;
+}
+
+/* [전체 wrap] */
+.board_hongbo3_wrap {
+    --_wid-max: 960px;
+    position: relative;
+    width: 100%;
+    max-width: var(--_wid-max);
+    margin: 0 auto;
+    font-family: "Outfit", "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    font-optical-sizing: auto;
+    container-type:inline-size;
+    container-name:wrap;
+}
+.board_hongbo3_wrap:not(.forSticky){
+    overflow: hidden;
+}
+
+/* 전체 wrap 하부 reset */
+.board_hongbo3_wrap * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+.board_hongbo3_wrap li {
+    list-style-type: none;
+}
+
+/* [skeletonloading] */
+.skeletonloading {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    width: 100%;
+    padding: 40px 20px;
+    text-align: center;
+    background: #e0e0e0 !important;
+    background-image: linear-gradient(90deg,
+            #e0e0e0 25%,
+            #f0f0f0 50%,
+            #e0e0e0 75%) !important;
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #888;
+}
+
+.skeletonloading p:first-child {
+    font-size: 22px;
+}
+
+/* skeletonloading 애니메이션 효과 */
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* [시각장애인용 숨김처리] */
+.hidden-readable {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/* [유의사항/경고] */
+.hb3-caution {
+    position: relative;
+    width: 100%;
+    padding: 1em 1.5em;
+    background: #f5f5f5;
+    border: 1px solid #e6e6e6;
+    line-height: 1.6;
+    font-size: 14px;
+    color: #333;
+}
+
+.hb3-caution-list {
+    position: relative;
+    width: 100%;
+}
+
+.hb3-caution-list-item {
+    position: relative;
+    width: 100%;
+    padding-left:.8em;
+}
+.hb3-caution-list-item-dot{
+    position:absolute;display:block;
+    left:0; top:0.8em;
+    transform:translateY(-50%);
+    width:3px; aspect-ratio:1/1;
+    background:#333;
+    border:none;border-radius:50%;
+}
+
+/* [테이블] */
+/* 전체 wrap */
+.sbz-tbl-wrap{
+    position:relative; overflow:hidden;
+    width:100%;
+}
+/* 테이블 감싸는 box */
+.sbz-tbl-box{
+    position:relative; overflow:auto;
+    width:100%;
+    padding-bottom:5px;
+}
+.sbz-tbl-box::-webkit-scrollbar{
+    width:10px; height:5px;
+    background:var(--_th);
+}
+.sbz-tbl-box::-webkit-scrollbar-thumb{
+    background:var(--_border);
+    border-radius:10px;
+}
+.sbz-tbl-box::-webkit-scrollbar-button{
+    background:var(--_th);
+}
+/* 테이블 */
+.sbz-tbl{
+    position:relative;
+    min-width:100%;
+    background:var(--_border);
+    border-collapse:separate; border-spacing:1px;
+}
+/* caption */
+.sbz-tbl-caption{
+    padding:1em;
+    background:var(--_border);
+    font-size:14px; font-weight:500;
+    color:#fff;
+}
+/* thead-th */
+.sbz-tbl-thead-th{
+    position:relative;
+    padding:8px;
+    background:var(--_th);
+    font-size:13px; font-weight:500;
+    color:var(--_color);
+    word-break:keep-all;
+}
+/* tbody-td */
+.sbz-tbl-tbody-td{
+    position:relative;
+    padding:8px;
+    background:var(--_td);
+    font-size:14px; font-weight:500; color:var(--_color);
+    white-space:nowrap;
+    word-break:keep-all;
+}
+/* 스크롤 안내 문구 */
+.sbz-tbl-scroll{
+    font-size:12px;color:#888;
+}
+.sbz-tbl-scroll::before{content:"*";margin-right:5px;}

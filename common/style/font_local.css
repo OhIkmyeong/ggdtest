@@ -1,0 +1,51 @@
+@charset "utf-8";
+/* ============================================================
+   Font list
+==============================================================*/
+/*해피니스*/
+
+@font-face {
+    font-family: 'HappinessSans';
+    font-style: normal;
+    font-weight: 500;
+    src: url('/fonts/HappinessSansBoldWoff/Happiness-Sans-Bold.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'HappinessSans';
+    font-style: normal;
+    font-weight: 300;
+    src: url('/fonts/Happiness-Sans-Regular.woff2') format('woff2');
+}
+
+/*노멀=웨이트700*/
+@font-face {
+    font-family: 'HappinessSans';
+    font-style: normal;
+    font-weight: normal;
+    src: url('/fonts/Happiness-Sans-Title.woff2') format('woff2');
+}
+
+
+/*지마켓*/
+
+@font-face {
+    font-family: 'GmarketSans';
+    font-weight: 700;
+    font-style: normal;
+    src: url('/fonts/GmarketSansBold.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'GmarketSans';
+    font-weight: 500;
+    font-style: normal;
+    src: url('/fonts/GmarketSansMedium.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'GmarketSans';
+    font-weight: 300;
+    font-style: normal;
+    src: url('/fonts/GmarketSansLight.woff2') format('woff2');
+}

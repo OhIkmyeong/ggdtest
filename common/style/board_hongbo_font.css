@@ -1,0 +1,113 @@
+@charset "utf-8";
+/* ============================================================
+   Font list
+==============================================================*/
+    /*해피니스*/
+
+    @font-face {
+        font-family: 'HappinessSans';
+        font-style: normal;
+        font-weight: 500;
+        src: url('https://www.gg.go.kr/cont/resources/font/HappinessSans/HappinessSansBoldWoff/Happiness-Sans-Bold.woff2') format('woff2'),
+            url('https://www.gg.go.kr/cont/resources/font/HappinessSans/HappinessSansBoldWoff/Happiness-Sans-Bold.woff') format('woff'),
+            url('https://www.gg.go.kr/cont/resources/font/HappinessSans/HappinessSansBoldWoff/Happiness-Sans-Bold.woff') format('truetype'),
+            url('https://www.gg.go.kr/cont/resources/font/HappinessSans/HappinessSansBoldTTF/Happiness-Sans-Bold.ttf') format('truetype');
+    }
+
+    @font-face {
+        font-family: 'HappinessSans';
+        font-style: normal;
+        font-weight: 300;
+        src: url('https://www.gg.go.kr/cont/resources/font/HappinessSans/HappinessSansBoldWoff/Happiness-Sans-Regular.woff2') format('woff2'),
+            url('https://www.gg.go.kr/cont/resources/font/HappinessSans/HappinessSansBoldWoff/Happiness-Sans-Regular.woff') format('woff'),
+            url('https://www.gg.go.kr/cont/resources/font/HappinessSans/HappinessSansBoldWoff/Happiness-Sans-Regular.woff') format('truetype'),
+            url('https://www.gg.go.kr/cont/resources/font/HappinessSans/HappinessSansBoldTTF/Happiness-Sans-Regular.ttf') format('truetype');
+    }
+/*노멀=웨이트700*/
+    @font-face {
+        font-family: 'HappinessSans';
+        font-style: normal;
+        font-weight: normal;
+        src: url('https://www.gg.go.kr/cont/resources/font/HappinessSans/HappinessSansBoldWoff/Happiness-Sans-Title.woff2') format('woff2'),
+            url('https://www.gg.go.kr/cont/resources/font/HappinessSans/HappinessSansBoldWoff/Happiness-Sans-Title.woff') format('woff'),
+            url('https://www.gg.go.kr/cont/resources/font/HappinessSans/HappinessSansBoldWoff/Happiness-Sans-Title.woff') format('truetype'),
+            url('https://www.gg.go.kr/cont/resources/font/HappinessSans/HappinessSansBoldTTF/Happiness-Sans-Title.ttf') format('truetype');
+    }
+
+
+    /*지마켓*/
+
+    @font-face {
+        font-family: 'GmarketSans';
+        font-weight: 700;
+        font-style: normal;
+        src: url('https://www.gg.go.kr/cont/resources/font/G-market/GmarketSanswoff/GmarketSansBold.woff2') format('woff2'),
+            url('https://www.gg.go.kr/cont/resources/font/G-market/GmarketSanswoff/GmarketSansBold.woff') format('woff'),
+            url('https://www.gg.go.kr/cont/resources/font/G-market/GmarketSanswoff/GmarketSansBold.woff') format('truetype'),
+            url('https://www.gg.go.kr/cont/resources/font/G-market/GmarketSansTTF/GmarketSansTTFBold.ttf') format("truetype");
+    }
+
+    @font-face {
+        font-family: 'GmarketSans';
+        font-weight: 500;
+        font-style: normal;
+        src: url('https://www.gg.go.kr/cont/resources/font/G-market/GmarketSanswoff/GmarketSansMedium.woff2') format('woff2'),
+            url('https://www.gg.go.kr/cont/resources/font/G-market/GmarketSanswoff/GmarketSansMedium.woff') format('woff'),
+            url('https://www.gg.go.kr/cont/resources/font/G-market/GmarketSanswoff/GmarketSansMedium.woff') format('truetype'),
+            url('https://www.gg.go.kr/cont/resources/font/G-market/GmarketSansTTF/GmarketSansTTFMedium.ttf') format("truetype");
+    }
+
+    @font-face {
+        font-family: 'GmarketSans';
+        font-weight: 300;
+        font-style: normal;
+        src: url('https://www.gg.go.kr/cont/resources/font/G-market/GmarketSanswoff/GmarketSansLight.woff2') format('woff2'),
+            url('https://www.gg.go.kr/cont/resources/font/G-market/GmarketSanswoff/GmarketSansLight.woff') format('woff'),
+            url('https://www.gg.go.kr/cont/resources/font/G-market/GmarketSanswoff/GmarketSansLight.woff') format('truetype'),
+            url('https://www.gg.go.kr/cont/resources/font/G-market/GmarketSansTTF/GmarketSansTTFLight.ttf') format("truetype");
+    }
+
+   /* Pretendard */
+
+@font-face {
+	font-family: "Pretendard-Regular";
+	src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+		format("woff");
+	font-style: normal;
+}
+@font-face {
+	font-family: "Pretendard-Medium";
+	src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff")
+		format("woff");
+	font-style: normal;
+}
+@font-face {
+	font-family: "Pretendard-SemiBold";
+	src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff")
+		format("woff");
+	font-style: normal;
+}
+@font-face {
+	font-family: "Pretendard-Bold";
+	src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff")
+		format("woff");
+	font-style: normal;
+}
+@font-face {
+	font-family: "Pretendard-ExtraBold";
+	src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff")
+		format("woff");
+	font-style: normal;
+}
+@font-face {
+	font-family: "Pretendard-Black";
+	src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Black.woff")
+		format("woff");
+	font-style: normal;
+}
+@font-face {
+    font-family: 'Pretendard-Light';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
