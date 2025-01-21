@@ -9,9 +9,7 @@
 
 *{margin:0;padding:0;box-sizing:border-box;}
 li{list-style-type:none;}
-html,body{
-    background:#ccc;
-}
+
 
 /* [하단 썸네일 및 첨부파일 미리보기 삭제] */
 .owl-carousel.owl-theme {
